@@ -9,16 +9,16 @@ server = app.server
 
 ################### Load and Clean Data #####################
 
-cluster_cluster_csv = "clusters_cluster.csv"
+cluster_cluster_csv = "https://raw.githubusercontent.com/mattlucich/data-608-final/first/clusters_cluster.csv"
 df_cluster_cluster = pd.read_csv(cluster_cluster_csv)
 clusters_clusters_sorted = np.array(list(set(df_cluster_cluster.sort_values(by="cluster")["cluster_broad"])))
 clusters_clusters_sorted_list = list(np.sort(clusters_clusters_sorted))
 
-cluster_bar_csv = "cluster_broad_bar.csv"
+cluster_bar_csv = "https://raw.githubusercontent.com/mattlucich/data-608-final/first/cluster_broad_bar.csv"
 df_cluster_bar = pd.read_csv(cluster_bar_csv)
 df_visual_bar = df_cluster_bar[['cluster_broad','date_publish', 'outlet', 'headline']]
 
-articles_cluster_csv = "articles_cluster.csv"
+articles_cluster_csv = "https://raw.githubusercontent.com/mattlucich/data-608-final/first/articles_cluster.csv"
 df_articles_cluster = pd.read_csv(articles_cluster_csv)
 df_articles_cluster = df_articles_cluster.rename(columns={"date_publish":"Publish", "outlet":"Outlet", "headline":"Headline"})
 clusters_sorted = np.array(list(set(df_articles_cluster.sort_values(by="cluster")["cluster"])))
@@ -29,7 +29,7 @@ default_did_not_cover_str = ', '.join(default_did_not_cover)
 
 df_articles_cluster_table = df_articles_cluster[["cluster", "Publish", "Outlet", "Headline"]]
 
-outlet_total_perc = "total_outlet_perc.csv"
+outlet_total_perc = "https://raw.githubusercontent.com/mattlucich/data-608-final/first/total_outlet_perc.csv"
 df_outlet_perc = pd.read_csv(outlet_total_perc)
 
 ################### Event Cluster 3D #####################
